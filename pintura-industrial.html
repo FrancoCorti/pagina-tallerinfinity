@@ -87,9 +87,10 @@
 
         .proceso-steps {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
+            justify-content: center;
         }
 
         .paso {
@@ -261,11 +262,6 @@
                         <h3>Pintura</h3>
                         <p>Aplicación de esmalte en cabina presurizada con acabado profesional.</p>
                     </div>
-                    <div class="paso">
-                        <div class="paso-numero">4</div>
-                        <h3>Secado y Barniz</h3>
-                        <p>Secado en horno y aplicación de barniz protector.</p>
-                    </div>
                 </div>
             </div>
 
@@ -307,8 +303,8 @@
 
     <!-- Botón Flotante WhatsApp -->
     <a href="https://wa.me/541112345678?text=Hola%20Taller%20Infinity,%20quisiera%20consultar%20sobre%20vuestros%20servicios" target="_blank" class="btn-flotante-whatsapp" title="Contactar por WhatsApp">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 22.27c-5.664 0-10.27-4.606-10.27-10.27S6.335 1.73 12 1.73s10.27 4.606 10.27 10.27-4.608 10.27-10.27 10.27zm5.43-15.35c-.31-.155-1.823-.899-2.105-.999-.282-.1-.488-.155-.69.157-.203.31-.787.998-.965 1.202-.178.203-.356.228-.666.074-.31-.154-1.31-.482-2.494-1.54-.92-.816-1.54-1.823-1.72-2.132-.177-.31.017-.476.134-.63.137-.138.31-.36.465-.537.154-.179.205-.305.307-.508.103-.203.052-.38-.025-.535-.077-.154-.689-1.66-.944-2.274-.248-.603-.498-.52-.69-.53-.178-.008-.385-.01-.59-.01-.204 0-.536.076-.816.38-.28.305-1.07 1.044-1.07 2.544 0 1.5 1.096 2.95 1.25 3.154.154.203 2.15 3.29 5.21 4.61.728.315 1.296.502 1.737.64.73.233 1.395.2 1.92.122.585-.087 1.8-.736 2.053-1.447.254-.71.254-1.32.178-1.447-.075-.128-.28-.2-.585-.35z"/>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
     </a>
 
