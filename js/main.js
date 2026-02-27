@@ -207,12 +207,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const testimoniosNext = document.getElementById('testimonios-next');
     
     let testimoniosIndex = 3; // Empezar en los testimonios reales (1, 2, 3)
-    const testimonioSlideWidth = 352; // 320px width + 32px gap
     const totalTestimonios = 6;
     const testimoniosCloneOffset = 3;
     
+    // Función para obtener el ancho de la tarjeta dinámicamente
+    function getTestimonioSlideWidth() {
+        const card = document.querySelector('.testimonio-card');
+        if (card) {
+            const style = window.getComputedStyle(card);
+            const width = parseFloat(style.width);
+            const gap = 32; // gap del flex
+            return width + gap;
+        }
+        // Fallback para dispositivos
+        return window.innerWidth <= 768 ? window.innerWidth : 352;
+    }
+    
     // Función para actualizar la posición sin reseteo visible
     function updateTestimonios(animate = true) {
+        const testimonioSlideWidth = getTestimonioSlideWidth();
         const offset = -testimoniosIndex * testimonioSlideWidth;
         if (animate) {
             testimoniosTrack.style.transition = 'transform 0.4s ease';
