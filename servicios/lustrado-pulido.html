@@ -16,6 +16,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            background-color: #2b2b2b;
             color: white;
             padding: 100px 20px;
             text-align: center;
@@ -134,12 +135,58 @@
         }
 
         @media (max-width: 768px) {
+            .servicio-hero {
+                background-attachment: scroll;
+                padding: 60px 20px;
+                margin-top: 56px;
+            }
+
             .servicio-hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .servicio-hero p {
-                font-size: 1rem;
+                font-size: 0.95rem;
+            }
+
+            .servicio-contenido {
+                padding: 0 15px;
+            }
+
+            .servicio-seccion h2 {
+                font-size: 1.5rem;
+            }
+
+            .servicio-seccion p {
+                font-size: 0.95rem;
+            }
+
+            .beneficios {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .beneficio-card {
+                padding: 1.5rem;
+            }
+
+            .proceso-steps {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .paso {
+                padding: 1.5rem;
+            }
+
+            .cta-section {
+                padding: 2rem;
+                margin: 2rem 0;
+            }
+
+            .btn-contacto {
+                width: 100%;
+                padding: 1rem;
             }
         }
     </style>
