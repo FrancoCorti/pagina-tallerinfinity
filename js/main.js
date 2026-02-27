@@ -5,64 +5,81 @@ document.addEventListener('DOMContentLoaded', () => {
     // Seleccionamos los elementos que vamos a usar
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
-    const links = document.querySelectorAll('.nav-links li a');
     const navDropdown = document.querySelector('.nav-dropdown');
-    const dropdownLink = navDropdown ? navDropdown.querySelector('a') : null;
-
-    // Función para detectar si estamos en móvil
-    const isMobile = () => window.innerWidth <= 768;
+    
+    // Verificar que los elementos existan antes de agregar listeners
+    if (!mobileMenu) {
+        console.error('Elemento #mobile-menu no encontrado');
+        return;
+    }
+    
+    if (!navLinks) {
+        console.error('Elemento .nav-links no encontrado');
+        return;
+    }
 
     // 1. Evento para abrir/cerrar el menú al tocar el ícono de hamburguesa
-    mobileMenu.addEventListener('click', () => {
-        // La clase 'active' es la que muestra el menú en el CSS
+    mobileMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
         navLinks.classList.toggle('active');
     });
 
-    // 2. Manejo del dropdown en móviles
-    if (dropdownLink) {
-        dropdownLink.addEventListener('click', (e) => {
-            // En móviles, prevenir navegación y mostrar/ocultar dropdown
-            if (isMobile()) {
-                e.preventDefault();
-                navDropdown.classList.toggle('active');
-            }
-        });
+    // 2. Manejo especial del dropdown de Servicios en móviles
+    if (navDropdown) {
+        const dropdownLink = navDropdown.querySelector('a');
+        const dropdownMenu = navDropdown.querySelector('.dropdown-menu');
+        
+        if (dropdownLink) {
+            dropdownLink.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    navDropdown.classList.toggle('active');
+                }
+            });
+        }
+        
+        if (dropdownMenu) {
+            const dropdownItems = dropdownMenu.querySelectorAll('a');
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        navDropdown.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    }
+                });
+            });
+        }
     }
 
-    // 3. Evento para cerrar el menú cuando se hace clic en cualquier enlace (excepto Servicios en móviles)
+    // 3. Cerrar el menú cuando se hace clic en cualquier enlace (excepto Servicios en móviles)
+    const links = document.querySelectorAll('.nav-links li:not(.nav-dropdown) a');
     links.forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Si es el enlace de Servicios en móviles, no cerrar el menú principal
-            if (isMobile() && link === dropdownLink) {
-                return;
-            }
-            // Removemos la clase 'active' para ocultar el menú
+        link.addEventListener('click', () => {
             navLinks.classList.remove('active');
-            // También cerrar el dropdown
             if (navDropdown) {
                 navDropdown.classList.remove('active');
             }
         });
     });
 
-    // 4. Cerrar dropdown al hacer clic en los items del dropdown
-    const dropdownItems = navDropdown ? navDropdown.querySelectorAll('.dropdown-menu a') : [];
-    dropdownItems.forEach(item => {
-        item.addEventListener('click', () => {
-            if (isMobile()) {
-                navDropdown.classList.remove('active');
-                navLinks.classList.remove('active');
-            }
-        });
-    });
-
-    // 5. Cerrar dropdown/menú al redimensionar pantalla
+    // 4. Cerrar menús al redimensionar a pantalla grande
     window.addEventListener('resize', () => {
-        if (!isMobile()) {
+        if (window.innerWidth > 768) {
+            navLinks.classList.remove('active');
             if (navDropdown) {
                 navDropdown.classList.remove('active');
             }
+        }
+    });
+    
+    // 5. Cerrar el menú si se hace clic afuera de él
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !navLinks.contains(e.target)) {
             navLinks.classList.remove('active');
+            if (navDropdown) {
+                navDropdown.classList.remove('active');
+            }
         }
     });
 
@@ -235,36 +252,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // ============== MENÚ DESPLEGABLE DE SERVICIOS ==============
-    // Para dispositivos móviles, hacer el dropdown clickeable
-    const navDropdown = document.querySelector('.nav-dropdown');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
     
-    if (navDropdown && dropdownMenu) {
-        // En móviles, prevenir que el dropdown se cierre inmediatamente
-        navDropdown.addEventListener('click', (e) => {
-            // Si es pantalla pequeña y el dropdown está oculto, mostrarlo
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                dropdownMenu.style.opacity = dropdownMenu.style.opacity === '1' ? '0' : '1';
-                dropdownMenu.style.visibility = dropdownMenu.style.visibility === 'visible' ? 'hidden' : 'visible';
-                dropdownMenu.style.transform = dropdownMenu.style.transform === 'translateY(0px)' ? 'translateY(-10px)' : 'translateY(0px)';
-            }
-        });
-
-        // Permettir clicks en los items del dropdown
-        const dropdownItems = dropdownMenu.querySelectorAll('a');
-        dropdownItems.forEach(item => {
-            item.addEventListener('click', (e) => {
-                // En móviles, cerrar el dropdown después de hacer clic
-                if (window.innerWidth <= 768) {
-                    dropdownMenu.style.opacity = '0';
-                    dropdownMenu.style.visibility = 'hidden';
-                    dropdownMenu.style.transform = 'translateY(-10px)';
-                }
-            });
-        });
-    }
+    // ============== MENÚ DESPLEGABLE DE SERVICIOS ==============
+    // Este código está integrado arriba en la sección del men hamburguesa
     
     // Inicializar
     updateTestimonios(false);

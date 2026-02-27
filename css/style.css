@@ -177,6 +177,7 @@ nav {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-color: #2b2b2b;
     color: var(--color-blanco);
     height: 80vh;
     display: flex;
@@ -951,7 +952,8 @@ footer {
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex !important;
+        visibility: visible;
     }
 
     .menu-toggle {
@@ -975,7 +977,7 @@ footer {
     }
 
     .nav-dropdown.active .dropdown-menu {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
     }
 
@@ -1007,6 +1009,12 @@ footer {
 
     .hero-content h1 {
         font-size: 2rem;
+    }
+
+    .hero {
+        background-attachment: scroll;
+        min-height: 60vh;
+        height: auto;
     }
 
     .contacto-container {
