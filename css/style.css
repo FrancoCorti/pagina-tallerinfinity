@@ -1,0 +1,1084 @@
+/* =========================================
+   VARIABLES DE COLOR (Paleta: Rojo, Negro, Gris)
+   ========================================= */
+:root {
+    --color-negro: #111111;
+    --color-gris-oscuro: #2b2b2b;
+    --color-gris-claro: #f4f4f4;
+    --color-rojo: #d32f2f; /* Rojo intenso y profesional */
+    --color-rojo-hover: #b71c1c; /* Rojo más oscuro para cuando pasas el mouse */
+    --color-blanco: #ffffff;
+    --fuente-principal: 'Montserrat', sans-serif;
+}
+
+/* =========================================
+   RESET BÁSICO
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-blanco);
+    color: var(--color-negro);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================
+   CABECERA Y NAVEGACIÓN
+   ========================================= */
+header {
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+    padding: 0.8rem 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    min-height: 60px;
+}
+
+.logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    position: absolute;
+    left: 5%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.logo h2 {
+    color: var(--color-rojo);
+    letter-spacing: 1px;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-rojo);
+}
+
+/* Menú Desplegable (Dropdown) */
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-gris-oscuro);
+    border-top: 3px solid var(--color-rojo);
+    min-width: 250px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--color-negro);
+    color: var(--color-rojo);
+    padding-left: 2rem;
+}
+
+/* Menú Hamburguesa (Oculto en PC) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    z-index: 1001;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: var(--color-blanco);
+    margin: 4px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* =========================================
+   SECCIÓN HERO (INICIO)
+   ========================================= */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/foto-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--color-blanco);
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-rojo-hover);
+}
+
+/* =========================================
+   SECCIONES GENERALES
+   ========================================= */
+section {
+    padding: 5rem 5%;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--color-negro);
+}
+
+/* =========================================
+   SERVICIOS
+   ========================================= */
+.servicios {
+    background-color: var(--color-gris-claro);
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--color-blanco);
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    border-bottom: 4px solid transparent;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    border-bottom-color: var(--color-rojo);
+    transform: translateY(-5px);
+}
+
+.card-imagen {
+    width: 100%;
+    height: 250px;
+    background-color: var(--color-gris-oscuro);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-contenido {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h3 {
+    margin-bottom: 0.8rem;
+    color: var(--color-rojo);
+    font-size: 1.3rem;
+}
+
+.card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* =========================================
+   EMPRESAS (CAROUSEL)
+   ========================================= */
+.empresas {
+    background-color: var(--color-gris-claro);
+    text-align: center;
+    padding: 5rem 5%;
+}
+
+.empresas h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-negro);
+}
+
+.empresas > p {
+    margin-bottom: 3rem;
+    color: var(--color-gris-oscuro);
+    font-size: 1.1rem;
+}
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: var(--color-blanco);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.carousel-container {
+    flex: 1;
+    overflow: hidden;
+    background-color: var(--color-blanco);
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.carousel-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 200px;
+    height: 120px;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.carousel-slide img:hover {
+    filter: grayscale(0%);
+}
+
+.carousel-btn {
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+    background-color: var(--color-rojo-hover);
+    transform: scale(1.1);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+
+/* =========================================
+   FORMULARIO DE CONSULTA RÁPIDA
+   ========================================= */
+.consulta-rapida {
+    background-color: var(--color-gris-claro);
+    padding: 3rem 5%;
+}
+
+.consulta-rapida h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-negro);
+}
+
+.form-consulta {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--color-blanco);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    align-items: start;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--color-negro);
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: var(--fuente-principal);
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group:nth-child(4) {
+    grid-column: 1 / -1;
+}
+
+.form-group:nth-child(4) textarea {
+    height: 80px !important;
+}
+
+.form-group.recaptcha-container {
+    grid-column: 1 / -1;
+    margin-bottom: 0.5rem;
+    justify-content: center;
+}
+
+.btn-group {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-negro);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-rojo);
+    box-shadow: 0 0 5px rgba(211, 47, 47, 0.2);
+}
+
+.recaptcha-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.recaptcha-container .g-recaptcha {
+    transform: scale(0.9);
+    transform-origin: center;
+}
+
+.btn-submit {
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-group {
+    grid-column: 1 / -1;
+}
+
+.btn-group .btn-primary {
+    width: 100%;
+}
+
+#mensaje-respuesta {
+    margin-top: 1rem;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 4px;
+    display: none;
+}
+
+#mensaje-respuesta.exito {
+    background-color: #4caf50;
+    color: white;
+    display: block;
+}
+
+#mensaje-respuesta.error {
+    background-color: #f44336;
+    color: white;
+    display: block;
+}
+
+/* =========================================
+   SECCIÓN QUIÉNES SOMOS
+   ========================================= */
+.quienes-somos {
+    background-color: var(--color-blanco);
+    padding: 5rem 5%;
+}
+
+.quienes-somos h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--color-negro);
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.about-row-2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.about-imagen {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-texto h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--color-rojo);
+}
+
+.about-texto p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: var(--color-negro);
+}
+
+.about-texto p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================
+   POR QUÉ ELEGIRNOS
+   ========================================= */
+.por-que-elegirnos {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../assets/taller-foto3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 5rem 5%;
+}
+
+.por-que-elegirnos h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-negro);
+    position: relative;
+}
+
+.por-que-elegirnos h2::before,
+.por-que-elegirnos h2::after {
+    content: "●";
+    color: var(--color-rojo);
+    font-size: 1.2rem;
+    margin: 0 1rem;
+}
+
+.caracteristicas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.caracteristica-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caracteristica-icono {
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-negro);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-blanco);
+    flex-shrink: 0;
+}
+
+.caracteristica-item h3 {
+    font-size: 1.3rem;
+    color: var(--color-negro);
+    margin-bottom: 0.8rem;
+}
+
+.caracteristica-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-gris-oscuro);
+}
+
+/* =========================================
+   TESTIMONIOS
+   ========================================= */
+.testimonios {
+    background-color: var(--color-blanco);
+    padding: 5rem 5%;
+}
+
+.testimonios h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--color-negro);
+}
+
+.testimonios-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: var(--color-gris-claro);
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.testimonios-container {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.testimonios-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.4s ease;
+}
+
+.testimonio-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 320px;
+    background-color: var(--color-blanco);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.testimonio-contenido {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonio-contenido p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-gris-oscuro);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.testimonio-contenido h4 {
+    font-size: 1.1rem;
+    color: var(--color-rojo);
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+}
+
+.testimonio-ciudad {
+    font-size: 0.85rem;
+    color: var(--color-gris-oscuro);
+}
+
+.testimonios-btn {
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.testimonios-btn:hover {
+    background-color: var(--color-rojo-hover);
+    transform: scale(1.1);
+}
+
+.testimonios-btn:active {
+    transform: scale(0.95);
+}
+
+/* =========================================
+   CONTACTO (SECCIÓN)
+   ========================================= */
+.contacto {
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+    padding: 3rem 5%;
+}
+
+.contacto h2 {
+    color: var(--color-rojo);
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.contacto-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: var(--color-gris-oscuro);
+    border-radius: 8px;
+}
+
+.contacto-info-item {
+    border-bottom: 1px solid rgba(211, 47, 47, 0.3);
+    padding-bottom: 1.5rem;
+}
+
+.contacto-info-item:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.contacto-info-item h3 {
+    color: var(--color-rojo);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.contacto-info-item p {
+    color: var(--color-blanco);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1fa952;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.mapa-contenedor {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    height: 400px;
+}
+
+.mapa-contenedor iframe {
+    border-radius: 8px;
+}
+
+/* =========================================
+   BOTÓN FLOTANTE WHATSAPP
+   ========================================= */
+.btn-flotante-whatsapp {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-flotante-whatsapp:hover {
+    background-color: #1fa952;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.btn-flotante-whatsapp:active {
+    transform: scale(0.95);
+}
+
+.btn-flotante-whatsapp svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    background-color: #000;
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVO (Celulares y Tablets)
+   ========================================= */
+@media (max-width: 768px) {
+    header {
+        padding: 0.8rem 0;
+        min-height: 56px;
+    }
+
+    .logo {
+        left: 2%;
+        gap: 0.3rem;
+    }
+
+    .logo h2 {
+        font-size: 0.85rem;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+
+    nav {
+        flex: 1;
+        position: relative;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: fixed;
+        top: 56px;
+        left: 0;
+        background-color: var(--color-negro);
+        text-align: left;
+        padding: 0;
+        max-height: calc(100vh - 56px);
+        overflow-y: auto;
+        border-top: 1px solid var(--color-gris-oscuro);
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid var(--color-gris-oscuro);
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+        right: 2%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        background-color: var(--color-gris-oscuro);
+        border-top: none;
+        border-left: 3px solid var(--color-rojo);
+        min-width: auto;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding: 0;
+        margin: 0;
+        box-shadow: none;
+        display: none;
+    }
+
+    .nav-dropdown.active .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropdown-menu a {
+        padding: 0.8rem 1.5rem 0.8rem 2.5rem;
+        font-size: 0.95rem;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        background-color: var(--color-gris-oscuro);
+    }
+
+    .dropdown-menu a:hover {
+        background-color: var(--color-negro);
+        padding-left: 2.5rem;
+    }
+
+    .testimonios-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .testimonios h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .contacto-container {
+        grid-template-columns: 1fr; /* Apilamos contacto y mapa en móviles */
+    }
+
+    .mapa-contenedor {
+        height: 300px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .about-row-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .about-texto h3 {
+        font-size: 1.4rem;
+    }
+
+    .carousel-wrapper {
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .carousel-slide {
+        width: 150px;
+        height: 100px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .caracteristicas-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .caracteristica-icono {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+    }
+
+    .por-que-elegirnos h2 {
+        font-size: 2rem;
+    }
+
+    .por-que-elegirnos h2::before,
+    .por-que-elegirnos h2::after {
+        font-size: 1rem;
+        margin: 0 0.5rem;
+    }
+
+    .testimonios-wrapper {
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .testimonio-card {
+        width: 280px;
+        padding: 1.5rem;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}

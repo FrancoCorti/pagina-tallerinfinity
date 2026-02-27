@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapa y Microbollos | Taller Infinity</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .servicio-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/servicio-chapa.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .servicio-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .servicio-hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .servicio-contenido {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 20px;
+        }
+
+        .servicio-seccion {
+            margin-bottom: 3rem;
+        }
+
+        .servicio-seccion h2 {
+            color: var(--color-rojo);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+
+        .servicio-seccion p {
+            line-height: 1.8;
+            color: var(--color-gris-oscuro);
+            margin-bottom: 1rem;
+        }
+
+        .beneficios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .beneficio-card {
+            background-color: var(--color-blanco);
+            padding: 2rem;
+            border-left: 4px solid var(--color-rojo);
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tipo-tratamiento {
+            background-color: var(--color-gris-oscuro);
+            color: var(--color-blanco);
+            padding: 2rem;
+            border-left: 4px solid var(--color-rojo);
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tipo-tratamiento h3 {
+            color: var(--color-rojo);
+            margin-bottom: 1rem;
+        }
+
+        .beneficio-card h3 {
+            color: var(--color-rojo);
+            margin-bottom: 1rem;
+        }
+
+        .proceso-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .paso {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--color-blanco);
+            border: 2px solid var(--color-rojo);
+            border-radius: 10px;
+        }
+
+        .paso-numero {
+            font-size: 2.5rem;
+            color: var(--color-rojo);
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .paso h3 {
+            color: var(--color-negro);
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-section {
+            background-color: var(--color-negro);
+            color: var(--color-blanco);
+            padding: 3rem;
+            text-align: center;
+            border-radius: 10px;
+            margin: 3rem 0;
+        }
+
+        .cta-section h2 {
+            color: var(--color-rojo);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-contacto {
+            background-color: var(--color-rojo);
+            color: var(--color-blanco);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-contacto:hover {
+            background-color: var(--color-rojo-hover);
+        }
+
+        @media (max-width: 768px) {
+            .servicio-hero h1 {
+                font-size: 2rem;
+            }
+
+            .servicio-hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html#inicio" class="logo">
+            <img src="assets/logoauto.png" alt="Logo Auto" class="logo-img">
+            <h2>TALLER INFINITY</h2>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li class="nav-dropdown">
+                    <a href="index.html#servicios">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="chapa-microbollos.html">Chapa y Microbollos</a></li>
+                        <li><a href="pintura-industrial.html">Pintura Industrial de Calidad</a></li>
+                        <li><a href="lustrado-pulido.html">Lustrado y Pulido</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#empresas">Empresas</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="servicio-hero">
+            <h1>Chapa y Microbollos</h1>
+            <p>Reparación profesional de carrocería sin dañar la pintura original</p>
+        </section>
+
+        <section class="servicio-contenido">
+            <div class="servicio-seccion">
+                <h2>¿Qué es la reparación de chapa y microbollos?</h2>
+                <p>La reparación de chapa y microbollos es un proceso especializado que permite corregir abolladuras, golpes y pequeñas deformaciones en la carrocería de tu vehículo sin necesidad de lijar o repintar. Es una técnica de restauración que preserva la pintura original de tu auto, manteniendo así su valor y acabado.</p>
+                <p>En Taller Infinity, utilizamos técnicas avanzadas y herramientas profesionales para eliminar golpes y microbollos, devolviéndole a tu vehículo su apariencia impecable.</p>
+            </div>
+
+            <div class="servicio-seccion">
+                <h2>Técnicas que utilizamos</h2>
+                <div class="beneficios">
+                    <div class="tipo-tratamiento">
+                        <h3>Sistema Pendulum</h3>
+                        <p>Técnica de succión sin calor que elimina microbollos sin dañar la pintura original.</p>
+                    </div>
+                    <div class="tipo-tratamiento">
+                        <h3>PDR (Paintless Dent Removal)</h3>
+                        <p>Extracción de golpes desde el interior de la carrocería con herramientas especializadas.</p>
+                    </div>
+                    <div class="tipo-tratamiento">
+                        <h3>Soldadura en puntos</h3>
+                        <p>Para reparaciones estructurales que requieren refuerzo sin comprometer la integridad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="servicio-seccion">
+                <h2>Beneficios de elegir nuestro servicio</h2>
+                <div class="beneficios">
+                    <div class="beneficio-card">
+                        <h3>✓ Pintura Original</h3>
+                        <p>Conservamos la pintura de fábrica de tu vehículo, manteniendo su valor.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <h3>✓ Proceso rápido</h3>
+                        <p>La mayoría de reparaciones se completan en 1-3 días.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <h3>✓ Costo-efectivo</h3>
+                        <p>Más económico que reparaciones tradicionales con pintura.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <h3>✓ Sin soldaduras</h3>
+                        <p>Reparaciones sin alterar estructuralmente el vehículo.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <h3>✓ Garantía</h3>
+                        <p>Todos nuestros trabajos cuentan con garantía de satisfacción.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <h3>✓ Profesionales certificados</h3>
+                        <p>Equipo altamente entrenado con años de experiencia.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="servicio-seccion">
+                <h2>Nuestro proceso de trabajo</h2>
+                <div class="proceso-steps">
+                    <div class="paso">
+                        <div class="paso-numero">1</div>
+                        <h3>Inspección</h3>
+                        <p>Evaluamos el daño con luz especializada para determinar la mejor técnica.</p>
+                    </div>
+                    <div class="paso">
+                        <div class="paso-numero">2</div>
+                        <h3>Planificación</h3>
+                        <p>Seleccionamos las herramientas y técnicas más adecuadas para tu caso.</p>
+                    </div>
+                    <div class="paso">
+                        <div class="paso-numero">3</div>
+                        <h3>Reparación</h3>
+                        <p>Aplicamos nuestras técnicas profesionales con precisión milimétrica.</p>
+                    </div>
+                    <div class="paso">
+                        <div class="paso-numero">4</div>
+                        <h3>Control de calidad</h3>
+                        <p>Inspeccionamos meticulosamente el resultado antes de entregar tu vehículo.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="consulta-rapida">
+            <h2>Envíanos tu Consulta</h2>
+            <form id="form-consulta" class="form-consulta">
+                <div class="form-group">
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono *</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje *</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+                <div class="form-group recaptcha-container">
+                    <div class="g-recaptcha" data-sitekey="6LeIG3osAAAAANy5QGrzZ05Ueh8yDrFlfAvgp5nw"></div>
+                </div>
+                <div class="btn-group">
+                    <button type="submit" class="btn-primary btn-submit">Enviar Consulta</button>
+                </div>
+            </form>
+            <div id="mensaje-respuesta" class="mensaje-respuesta"></div>
+        </section>
+    </main>
+
+    <footer style="background-color: var(--color-negro); color: var(--color-blanco); text-align: center; padding: 2rem; margin-top: 3rem;">
+        <p>&copy; 2026 Taller Infinity. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/541112345678?text=Hola%20Taller%20Infinity,%20quisiera%20consultar%20sobre%20vuestros%20servicios" target="_blank" class="btn-flotante-whatsapp" title="Contactar por WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 22.27c-5.664 0-10.27-4.606-10.27-10.27S6.335 1.73 12 1.73s10.27 4.606 10.27 10.27-4.608 10.27-10.27 10.27zm5.43-15.35c-.31-.155-1.823-.899-2.105-.999-.282-.1-.488-.155-.69.157-.203.31-.787.998-.965 1.202-.178.203-.356.228-.666.074-.31-.154-1.31-.482-2.494-1.54-.92-.816-1.54-1.823-1.72-2.132-.177-.31.017-.476.134-.63.137-.138.31-.36.465-.537.154-.179.205-.305.307-.508.103-.203.052-.38-.025-.535-.077-.154-.689-1.66-.944-2.274-.248-.603-.498-.52-.69-.53-.178-.008-.385-.01-.59-.01-.204 0-.536.076-.816.38-.28.305-1.07 1.044-1.07 2.544 0 1.5 1.096 2.95 1.25 3.154.154.203 2.15 3.29 5.21 4.61.728.315 1.296.502 1.737.64.73.233 1.395.2 1.92.122.585-.087 1.8-.736 2.053-1.447.254-.71.254-1.32.178-1.447-.075-.128-.28-.2-.585-.35z"/>
+        </svg>
+    </a>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script defer src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Infinity | Chapa y Pintura</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="#inicio" class="logo">
+            <img src="assets/logoauto.png" alt="Logo Auto" class="logo-img">
+            <h2>TALLER INFINITY</h2>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li class="nav-dropdown">
+                    <a href="#servicios">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="chapa-microbollos.html">Chapa y Microbollos</a></li>
+                        <li><a href="pintura-industrial.html">Pintura Industrial de Calidad</a></li>
+                        <li><a href="lustrado-pulido.html">Lustrado y Pulido</a></li>
+                    </ul>
+                </li>
+                <li><a href="#empresas">Empresas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Devolvemos el brillo original a tu vehículo</h1>
+                <p>Especialistas en chapa, pintura con horno y colorimetría de alta precisión.</p>
+                <a href="#contacto" class="btn-primary">Pedir Presupuesto</a>
+            </div>
+        </section>
+
+        <section class="consulta-rapida">
+            <h2>Envíanos tu Consulta</h2>
+            <form id="form-consulta" class="form-consulta">
+                <div class="form-group">
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono *</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje *</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+                <div class="form-group recaptcha-container">
+                    <div class="g-recaptcha" data-sitekey="6LeIG3osAAAAANy5QGrzZ05Ueh8yDrFlfAvgp5nw"></div>
+                </div>
+                <div class="btn-group">
+                    <button type="submit" class="btn-primary btn-submit">Enviar Consulta</button>
+                </div>
+            </form>
+            <div id="mensaje-respuesta" class="mensaje-respuesta"></div>
+        </section>
+
+        <section id="servicios" class="servicios">
+            <h2>Nuestros Servicios</h2>
+            <div class="servicios-grid">
+                <article class="card">
+                    <div class="card-imagen">
+                        <img src="assets/servicio-chapa.jpg" alt="Chapa y Microbollos">
+                    </div>
+                    <div class="card-contenido">
+                        <h3>Chapa y Microbollos</h3>
+                        <p>Reparación de carrocería y sistema sacabollos sin dañar la pintura original.</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-imagen">
+                        <img src="assets/servicio-pintura.jpg" alt="Pintura Industrial de Calidad">
+                    </div>
+                    <div class="card-contenido">
+                        <h3>Pintura Industrial de Calidad</h3>
+                        <p>Cabina presurizada para un acabado perfecto, libre de impurezas y con secado rápido.</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-imagen">
+                        <img src="assets/lustrado-carroceria.jpg" alt="Lustrado y Pulido">
+                    </div>
+                    <div class="card-contenido">
+                        <h3>Lustrado y Pulido</h3>
+                        <p>Restauramos el brillo y protección de tu vehículo con productos profesionales de alta calidad.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="quienes-somos" class="quienes-somos">
+            <h2>Quiénes Somos</h2>
+            
+            <div class="about-container about-row-1">
+                <div class="about-imagen">
+                    <img src="assets/taller-foto1.jpg" alt="Nuestro Taller">
+                </div>
+                <div class="about-texto">
+                    <h3>Pasión por la Excelencia</h3>
+                    <p>Con más de 15 años de experiencia en el rubro, Taller Infinity se ha posicionado como referente en reparación y pintura automotriz. Nuestro equipo de profesionales altamente capacitados trabaja con los mejores materiales y tecnología de punta para garantizar un acabado impecable en cada proyecto.</p>
+                    <p>Creemos que cada vehículo merece la atención que se le debe. Por eso nos comprometemos a devolver el brillo original y la protección que necesita tu auto.</p>
+                </div>
+            </div>
+
+            <div class="about-container about-row-2">
+                <div class="about-texto">
+                    <h3>Compromiso con la Calidad</h3>
+                    <p>En Taller Infinity, no transamos con la calidad. Utilizamos productos profesionales de marcas líderes en la industria y contamos con infraestructura moderna incluyendo cabina de pintura presurizada, horno de secado y equipos de colorimetría de última generación.</p>
+                    <p>Tu satisfacción es nuestro objetivo principal. Cada trabajo que realizamos es inspeccionado minuciosamente para garantizar resultados que superan expectativas.</p>
+                </div>
+                <div class="about-imagen">
+                    <img src="assets/taller-foto-2.jpg" alt="Nuestro Equipo">
+                </div>
+            </div>
+        </section>
+
+        <section id="empresas" class="empresas">
+            <h2>Empresas que Trabajan con Nosotros</h2>
+            <p>Contamos con la confianza de las principales aseguradoras del país</p>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn carousel-btn-prev" id="carousel-prev">❮</button>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carousel-track">
+                        <!-- Clones al inicio para ir hacia atrás (sin saltos) -->
+                        <div class="carousel-slide">
+                            <img src="assets/logo-seguros-4.png" alt="Seguros 4">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/logo-seguros-5.png" alt="Seguros 5">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/logo-seguros-6.png" alt="Seguros 6">
+                        </div>
+                        <!-- Logos originales -->
+                        <div class="carousel-slide">
+                            <img src="assets/logo-seguros-1.png" alt="Seguros 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/logo-seguros-2.png" alt="Seguros 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/logo-seguros-3.png" alt="Seguros 3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/logo-seguros-4.png" alt="Seguros 4">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/logo-seguros-5.png" alt="Seguros 5">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/logo-seguros-6.png" alt="Seguros 6">
+                        </div>
+                        <!-- Clones al final para ir hacia adelante (sin saltos) -->
+                        <div class="carousel-slide">
+                            <img src="assets/logo-seguros-1.png" alt="Seguros 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/logo-seguros-2.png" alt="Seguros 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/logo-seguros-3.png" alt="Seguros 3">
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-btn-next" id="carousel-next">❯</button>
+            </div>
+        </section>
+
+        <section id="por-que-elegirnos" class="por-que-elegirnos">
+            <h2>Por Qué Elegirnos</h2>
+            <div class="caracteristicas-grid">
+                <div class="caracteristica-item">
+                    <div class="caracteristica-icono">🏆</div>
+                    <h3>Materiales de Primera Calidad</h3>
+                    <p>Utilizamos exclusivamente materiales y productos de marcas líderes reconocidas en la industria.</p>
+                </div>
+                <div class="caracteristica-item">
+                    <div class="caracteristica-icono">🎨</div>
+                    <h3>Color con Garantía de Fábrica</h3>
+                    <p>Igualamos el color exacto de tu vehículo con tecnología de colorimetría de última generación.</p>
+                </div>
+                <div class="caracteristica-item">
+                    <div class="caracteristica-icono">🤝</div>
+                    <h3>Honestidad, Transparencia y Trayectoria</h3>
+                    <p>15 años de experiencia respaldan nuestro compromiso con la integridad y la excelencia.</p>
+                </div>
+                <div class="caracteristica-item">
+                    <div class="caracteristica-icono">✓</div>
+                    <h3>Trabajos Garantizados</h3>
+                    <p>Todos nuestros trabajos cuentan con garantía, reflejando nuestra confianza en la calidad.</p>
+                </div>
+                <div class="caracteristica-item">
+                    <div class="caracteristica-icono">🚗</div>
+                    <h3>Seguimiento Personalizado</h3>
+                    <p>Brindamos atención personalizada y seguimiento detallado en cada etapa de la reparación.</p>
+                </div>
+                <div class="caracteristica-item">
+                    <div class="caracteristica-icono">🔧</div>
+                    <h3>Reparaciones Confiables y Seguras</h3>
+                    <p>Nuestro equipo profesional realiza cada reparación con los más altos estándares de seguridad.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="testimonios">
+            <h2>Lo Que Dicen Nuestros Clientes</h2>
+            <div class="testimonios-wrapper">
+                <button class="testimonios-btn testimonios-btn-prev" id="testimonios-prev">❮</button>
+                <div class="testimonios-container">
+                    <div class="testimonios-track" id="testimonios-track">
+                        <!-- Clones al inicio (últimos 3 testimonios) -->
+                        <div class="testimonio-card">
+                            <div class="testimonio-contenido">
+                                <p>"Servicio impecable y garantía en todos los trabajos. Definitivamente vuelvo a Taller Infinity."</p>
+                                <h4>Ana Martínez</h4>
+                                <span class="testimonio-ciudad">Avellaneda</span>
+                            </div>
+                        </div>
+                        <div class="testimonio-card">
+                            <div class="testimonio-contenido">
+                                <p>"Muy profesional el equipo. Mi auto quedó como nuevo después del lustrado. Precio justo."</p>
+                                <h4>Roberto Silva</h4>
+                                <span class="testimonio-ciudad">Quilmes</span>
+                            </div>
+                        </div>
+                        <div class="testimonio-card">
+                            <div class="testimonio-contenido">
+                                <p>"Recomendado al 100%. Trabajos de calidad, buenos precios y atención personalizada. Gracias!"</p>
+                                <h4>Patricia Fernández</h4>
+                                <span class="testimonio-ciudad">Vicente López</span>
+                            </div>
+                        </div>
+                        <!-- Testimonios originales -->
+                        <div class="testimonio-card">
+                            <div class="testimonio-contenido">
+                                <p>"Excelente trabajo, quedé muy satisfecho con el resultado de la pintura de mi auto. Muy profesionales."</p>
+                                <h4>Juan García</h4>
+                                <span class="testimonio-ciudad">Buenos Aires</span>
+                            </div>
+                        </div>
+                        <div class="testimonio-card">
+                            <div class="testimonio-contenido">
+                                <p>"Taller Infinity es confiable. Repararon la chapa de mi vehículo perfectamente. Los recomiendo."</p>
+                                <h4>María López</h4>
+                                <span class="testimonio-ciudad">CABA</span>
+                            </div>
+                        </div>
+                        <div class="testimonio-card">
+                            <div class="testimonio-contenido">
+                                <p>"Los mejores en colorimetría. El color quedó exactamente igual al original. Muy impresionado."</p>
+                                <h4>Carlos Rodríguez</h4>
+                                <span class="testimonio-ciudad">La Plata</span>
+                            </div>
+                        </div>
+                        <div class="testimonio-card">
+                            <div class="testimonio-contenido">
+                                <p>"Servicio impecable y garantía en todos los trabajos. Definitivamente vuelvo a Taller Infinity."</p>
+                                <h4>Ana Martínez</h4>
+                                <span class="testimonio-ciudad">Avellaneda</span>
+                            </div>
+                        </div>
+                        <div class="testimonio-card">
+                            <div class="testimonio-contenido">
+                                <p>"Muy profesional el equipo. Mi auto quedó como nuevo después del lustrado. Precio justo."</p>
+                                <h4>Roberto Silva</h4>
+                                <span class="testimonio-ciudad">Quilmes</span>
+                            </div>
+                        </div>
+                        <div class="testimonio-card">
+                            <div class="testimonio-contenido">
+                                <p>"Recomendado al 100%. Trabajos de calidad, buenos precios y atención personalizada. Gracias!"</p>
+                                <h4>Patricia Fernández</h4>
+                                <span class="testimonio-ciudad">Vicente López</span>
+                            </div>
+                        </div>
+                        <!-- Clones al final (primeros 3 testimonios) -->
+                        <div class="testimonio-card">
+                            <div class="testimonio-contenido">
+                                <p>"Excelente trabajo, quedé muy satisfecho con el resultado de la pintura de mi auto. Muy profesionales."</p>
+                                <h4>Juan García</h4>
+                                <span class="testimonio-ciudad">Buenos Aires</span>
+                            </div>
+                        </div>
+                        <div class="testimonio-card">
+                            <div class="testimonio-contenido">
+                                <p>"Taller Infinity es confiable. Repararon la chapa de mi vehículo perfectamente. Los recomiendo."</p>
+                                <h4>María López</h4>
+                                <span class="testimonio-ciudad">CABA</span>
+                            </div>
+                        </div>
+                        <div class="testimonio-card">
+                            <div class="testimonio-contenido">
+                                <p>"Los mejores en colorimetría. El color quedó exactamente igual al original. Muy impresionado."</p>
+                                <h4>Carlos Rodríguez</h4>
+                                <span class="testimonio-ciudad">La Plata</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="testimonios-btn testimonios-btn-next" id="testimonios-next">❯</button>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto">
+            <h2>Vení a visitarnos</h2>
+            <div class="contacto-container">
+                <div class="info-contacto">
+                    <div class="contacto-info-item">
+                        <h3>📍 Dirección</h3>
+                        <p>Calle Falsa 123, Buenos Aires</p>
+                    </div>
+                    <div class="contacto-info-item">
+                        <h3>📞 Teléfono</h3>
+                        <p>+54 11 1234-5678</p>
+                    </div>
+                    <div class="contacto-info-item">
+                        <h3>⏰ Horarios</h3>
+                        <p>Lunes a Viernes: 8:00 a 18:00 hs<br>Sábados: 9:00 a 13:00 hs</p>
+                    </div>
+                    <a href="https://wa.me/541112345678?text=Hola%20Taller%20Infinity,%20quisiera%20consultar%20sobre%20vuestros%20servicios" target="_blank" class="btn-whatsapp">
+                        <span>💬 Contactar por WhatsApp</span>
+                    </a>
+                </div>
+                <div class="mapa-contenedor">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.9848906933923!2d-58.38214222345039!3d-34.60368482286395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac8e5e5e5e5%3A0x1234567890abcdef!2sBuenos%20Aires!5e0!3m2!1ses!2sar!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Taller Infinity. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/541112345678?text=Hola%20Taller%20Infinity,%20quisiera%20consultar%20sobre%20vuestros%20servicios" target="_blank" class="btn-flotante-whatsapp" title="Contactar por WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+    </a>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script defer src="js/main.js"></script>
+</body>
+</html>
